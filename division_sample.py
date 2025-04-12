@@ -1,5 +1,7 @@
 import pandas as pd
 from division_rules.constrained_equal_awards_division import ConstrainedEqualAwardsDivision
+from division_rules.proportional_division import ProportionalDivision
+from division_rules.truncated_claims_division import TruncatedClaimsDivision
 
 claims = pd.DataFrame(
     data = {
@@ -9,7 +11,7 @@ claims = pd.DataFrame(
 )
 estate = 100
 
-div = ConstrainedEqualAwardsDivision(claims, estate)
+div = TruncatedClaimsDivision(claims, estate)
 
 div.check_claims()
 div.execute_division()
